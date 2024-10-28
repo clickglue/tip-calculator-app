@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <header>
+      <img src="./public/images/logo.svg" alt="Logo" />
+    </header>
+    <main>
+      <section class="input">
+        <div class="amount">
+          <h2>Bill</h2>
+          <img src="./public/images/icon-dollar.svg" alt="Dollar icon" />
+          <input type="text" />
+        </div>
+        <div class="tip">
+          <h2>Select Tip %</h2>
+          <div class="input-container">
+            <button value="5">5%</button>
+            <button value="10">10%</button>
+            <button value="15">15%</button>
+            <button value="20">20%</button>
+            <button value="25">25%</button>
+            <input type="number" placeholder="Custom" />
+          </div>
+        </div>
+        <div class="people">
+          <h2>Number of People</h2>
+          <img src="./public/images/icon-person.svg" alt="People Icon" />
+          <input type="number" />
+        </div>
+      </section>
+      <section class="results">
+        <div class="tip">
+          <h2>Tip Amount</h2>
+          <h3>/ person</h3>
+          <h3 class="tip-result">100</h3>
+        </div>
+        <div class="total">
+          <h2>Total</h2>
+          <h3>/ person</h3>
+          <h3 class="total-result">200</h3>
+        </div>
+        <button>reset</button>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,351 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*fonts*/
+/* space-mono-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/space-mono-v14-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* space-mono-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/space-mono-v14-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/*vars*/
+
+:root {
+  /* @link https://utopia.fyi/type/calculator?c=375,16,1.2,1440,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+  --fs--2: clamp(0.6944rem, 0.6573rem + 0.1586vw, 0.8rem);
+  --fs--1: clamp(0.8333rem, 0.7746rem + 0.2504vw, 1rem);
+  --fs-0: clamp(1rem, 0.912rem + 0.3756vw, 1.25rem);
+  --fs-1: clamp(1.2rem, 1.0724rem + 0.5446vw, 1.5625rem);
+  --fs-2: clamp(1.44rem, 1.2593rem + 0.7709vw, 1.9531rem);
+  --fs-3: clamp(1.728rem, 1.4768rem + 1.0718vw, 2.4414rem);
+  --fs-4: clamp(2.0736rem, 1.7292rem + 1.4695vw, 3.0518rem);
+  --fs-5: clamp(2.4883rem, 2.0213rem + 1.9927vw, 3.8147rem);
+
+  --space-3xs: clamp(0.25rem, 0.228rem + 0.0939vw, 0.3125rem);
+  --space-2xs: clamp(0.5rem, 0.456rem + 0.1878vw, 0.625rem);
+  --space-xs: clamp(0.75rem, 0.684rem + 0.2817vw, 0.9375rem);
+  --space-s: clamp(1rem, 0.912rem + 0.3756vw, 1.25rem);
+  --space-m: clamp(1.5rem, 1.368rem + 0.5634vw, 1.875rem);
+  --space-l: clamp(2rem, 1.8239rem + 0.7512vw, 2.5rem);
+  --space-xl: clamp(3rem, 2.7359rem + 1.1268vw, 3.75rem);
+  --space-2xl: clamp(4rem, 3.6479rem + 1.5023vw, 5rem);
+  --space-3xl: clamp(6rem, 5.4718rem + 2.2535vw, 7.5rem);
+
+  /*screen*/
+  --scr-lrg: 920px;
+
+  /*colors*/
+  --clr-strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --clr-dark-grayish-cyan: hsl(186, 14%, 43%);
+  --clr-grayish-cyan: hsl(184, 14%, 56%);
+  --clr-light-grayish-cyan: hsl(185, 41%, 84%);
+  --clr-very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --clt-white: hsl(0, 0%, 100%);
+
+  /*defaults*/
+  font-family: "Space Mono";
+  font-weight: 400;
+  background-color: var(--clr-light-grayish-cyan);
+}
+
+body {
+  /*center*/
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 375px;
+  font-size: var(--fs-0);
+
+  @media only screen and (min-width: var(--scr-lrg)) {
+    width: 64%;
+    font-size: var(--fs-0);
+  }
+}
+
+header img {
+  display: block;
+  margin-left: auto;
+  margin-top: 3rem;
+  margin-right: auto;
+  margin-bottom: 3rem;
+  width: 23%;
+}
+
+main {
+  box-sizing: border-box;
+  background-color: var(--clt-white);
+  width: 100%;
+  height: 789px;
+  border-radius: var(--space-m);
+  padding: 2rem;
+}
+
+.input .amount,
+.input .tip,
+.input .people {
+  margin-top: 0rem;
+  margin-bottom: 2rem;
+}
+
+.input .amount h2,
+.input .tip h2,
+.input .people h2 {
+  color: var(--clr-dark-grayish-cyan);
+  font-size: var(--fs--1);
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.input .amount img,
+.input .people img {
+  position: absolute;
+  height: 1rem;
+  margin: 1rem 0rem 1rem 1rem;
+}
+
+.input .amount input,
+.input .people input {
+  box-sizing: border-box;
+  padding: 1rem;
+  text-align: right;
+  font-family: "Space mono";
+  font-size: var(--fs-1);
+  font-weight: 700;
+  box-shadow: none;
+  border: none;
+  width: 100%;
+  height: 3rem;
+  background-color: var(--clr-very-light-grayish-cyan);
+  outline-color: var(--clr-strong-cyan);
+}
+
+.input .amount input:hover {
+  cursor: pointer;
+}
+
+.input .tip .input-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+
+.input .tip .input-container button {
+  border: none;
+  height: 3rem;
+  border-radius: var(--space-3xs);
+  color: var(--clt-white);
+  font-size: 1rem;
+  font-family: "Space Mono";
+  font-weight: 700;
+  background-color: var(--very-dark-cyan);
+}
+
+.input .tip .input-container button {
+  border: none;
+  height: 3rem;
+  border-radius: var(--space-3xs);
+  color: var(--clt-white);
+  font-size: 1rem;
+  font-family: "Space Mono";
+  font-weight: 700;
+  background-color: var(--very-dark-cyan);
+}
+
+.results {
+    box-sizing: border-box;
+    padding: 2rem 1rem 0rem 1rem;
+    background-color: var(--very-dark-cyan);
+    border-radius: var(--space-m);
+    height: 257px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.results .tip,
+.results .total{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "h2 amount"
+    "h3 amount";
+    color: white;
+}
+
+.results button {
+    width: 100%;
+    font-family: 'Space Mono';
+    background-color: var(--clr-strong-cyan);
+    color: var(--very-dark-cyan);
+    font-weight: 700;
+    font-size: var(--fs-1);
+    border-radius: var(--space-2xs);
+    height: 3rem;
+    box-shadow: none;
+    border: none;
+}
+
+.results .tip h2,
+.results .total h2 {
+    font-size: 1rem;
+    grid-area: h2;
+}
+
+.results .tip h3,
+.results .total h3 {
+    font-size: 0.75rem;
+    grid-area: h3;
+    color: var(--clr-grayish-cyan);
+}
+
+.results .tip .tip-result,
+.results .total .total-result {
+    text-align: right;
+    font-size: 2rem;
+    color: var(--clr-strong-cyan);
+    grid-area: amount;
+    font-weight: 700;
+}
