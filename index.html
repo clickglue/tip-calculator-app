@@ -16,7 +16,7 @@
         <div class="amount">
           <h2>Bill</h2>
           <img src="./public/images/icon-dollar.svg" alt="Dollar icon" />
-          <input type="number" step="0.01" value="0.00" id="input-bill" onchange="setBill(this)" />
+          <input type="text" id="input-bill" placeholder="0.00" onchange="setBill(this)" />
         </div>
         <div class="tip">
           <h2>Select Tip %</h2>
@@ -26,13 +26,22 @@
             <button onclick="setTip(this)" value="15">15%</button>
             <button onclick="setTip(this)" value="20">20%</button>
             <button onclick="setTip(this)" value="25">25%</button>
-            <input type="number" placeholder="Custom" onclick="setTip(this)" onchange="setTip(this)"/>
+            <input
+              id="input-tip"
+              type="number"
+              placeholder="Custom"
+              onclick="setTip(this)"
+              onchange="setTip(this)"
+            />
           </div>
         </div>
         <div class="people">
-          <h2>Number of People</h2>
+          <div class="headings">
+            <h2>Number of People</h2>
+            <h3 id="warning" class="warning">Please input 1 or more!</h3>
+          </div>
           <img src="./public/images/icon-person.svg" alt="People Icon" />
-          <input type="number" id="input-people" onchange="setPeople(this)" />
+          <input class="input" type="number" id="input-people" placeholder="1" onchange="setPeople(this)" />
         </div>
       </section>
       <section class="results">
