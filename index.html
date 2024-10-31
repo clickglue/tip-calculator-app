@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
+    <script type="text/javascript" src="./index.js"></script>
     <header>
       <img src="./public/images/logo.svg" alt="Logo" />
     </header>
@@ -15,37 +16,37 @@
         <div class="amount">
           <h2>Bill</h2>
           <img src="./public/images/icon-dollar.svg" alt="Dollar icon" />
-          <input type="text" />
+          <input type="number" step="0.01" value="0.00" id="input-bill" onchange="setBill(this)" />
         </div>
         <div class="tip">
           <h2>Select Tip %</h2>
           <div class="input-container">
-            <button value="5">5%</button>
-            <button value="10">10%</button>
-            <button value="15">15%</button>
-            <button value="20">20%</button>
-            <button value="25">25%</button>
-            <input type="number" placeholder="Custom" />
+            <button onclick="setTip(this)" value="5">5%</button>
+            <button onclick="setTip(this)" value="10">10%</button>
+            <button onclick="setTip(this)" value="15">15%</button>
+            <button onclick="setTip(this)" value="20">20%</button>
+            <button onclick="setTip(this)" value="25">25%</button>
+            <input type="number" placeholder="Custom" onclick="setTip(this)" onchange="setTip(this)"/>
           </div>
         </div>
         <div class="people">
           <h2>Number of People</h2>
           <img src="./public/images/icon-person.svg" alt="People Icon" />
-          <input type="number" />
+          <input type="number" id="input-people" onchange="setPeople(this)" />
         </div>
       </section>
       <section class="results">
         <div class="tip">
           <h2>Tip Amount</h2>
           <h3>/ person</h3>
-          <h3 class="tip-result">100</h3>
+          <p class="tip-result">€ <span id="tip-result">0.00</span></p>
         </div>
         <div class="total">
           <h2>Total</h2>
           <h3>/ person</h3>
-          <h3 class="total-result">200</h3>
+          <p class="total-result">€ <span id="total-result">0.00</span></p>
         </div>
-        <button>reset</button>
+        <button onclick="reset()">reset</button>
       </section>
     </main>
   </body>
